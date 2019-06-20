@@ -1,0 +1,2 @@
+global.mongodburl = "mongodb://metadataCheckStorage:NELqingmingzi1128@dds-bp1df57f935202e41897-pub.mongodb.rds.aliyuncs.com:3717,dds-bp1df57f935202e42907-pub.mongodb.rds.aliyuncs.com:3717/NEO_Metadata_Check?replicaSet=mgset-10445701";
+global.mongodb_Db = "NEO_Metadata_Check";

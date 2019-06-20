@@ -1,0 +1,23 @@
+{
+    "name":"fundPool",
+    "hash":"",
+    "tableName":"contracts",
+    "needGetEvents":[
+        {
+            "eventName":"OnBuy",
+            "Values":["address","uint256","uint256"]
+        },
+        {
+            "eventName":"OnSell",
+            "Values":["address","uint256","uint256"]
+        },
+        {
+            "eventName":"OnRevenue",
+            "Values":["address","uint256","uint256"]
+        },
+        {
+            "eventName":"OnWindingUp",
+            "Values":["address","uint256"]
+        }
+    ]
+}

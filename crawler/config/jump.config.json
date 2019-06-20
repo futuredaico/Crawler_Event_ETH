@@ -1,0 +1,11 @@
+{
+    "name":"jump",
+    "hash":"0x60e390833ddc09cd14258df40629992e7086e04a",
+    "tableName":"contracts",
+    "needGetEvents":[
+        {
+            "eventName":"OnCreate",
+            "Values":["uint256","address","string","address","address"]
+        }
+    ]
+}

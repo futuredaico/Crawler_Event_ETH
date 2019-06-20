@@ -1,0 +1,31 @@
+{
+    "name":"vote",
+    "hash":"",
+    "tableName":"contracts",
+    "needGetEvents":[
+        {
+            "eventName":"OnApplyProposal",
+            "Values":["uint256","string","address","uint256","address","uint256","uint256","string"]
+        },
+        {
+            "eventName":"OnVote",
+            "Values":["uint256","uint8","uint256"]
+        },
+        {
+            "eventName":"OnProcess",
+            "Values":["uint256","bool"]
+        },
+        {
+            "eventName":"OnAbort",
+            "Values":["uint256"]
+        },
+        {
+            "eventName":"OnOneTicketRefuse",
+            "Values":["uint256"]
+        },
+        {
+            "eventName":"OnGetMoney",
+            "Values":["uint256","uint256","uint256","uint256"]
+        }
+    ]
+}

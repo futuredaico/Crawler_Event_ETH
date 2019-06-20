@@ -1,0 +1,62 @@
+[
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_name",
+				"type": "string"
+			},
+			{
+				"name": "_days",
+				"type": "uint256"
+			},
+			{
+				"name": "_money",
+				"type": "uint256"
+			}
+		],
+		"name": "createProject",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"name": "index",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"name": "creater",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"name": "projectName",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"name": "fundPoolAddress",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"name": "voteAddress",
+				"type": "address"
+			}
+		],
+		"name": "OnCreate",
+		"type": "event"
+	}
+]
