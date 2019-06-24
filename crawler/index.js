@@ -68,13 +68,18 @@ var scheduleCronstyle = async () => {
                 await mongodbHelper.updateOne(mongodbHelper.collections.get("counter"), { "counter": "blockNumber" }, { $set: { "lastIndex": blockindex } });
         }
         catch (error) {
-            console.log(error);
+            console.log("error:"+error);
             ethHandler.connect();
         }
 
     });
 }
 
+process.on('uncaughtException',  async(err) =>{
+    console.log("error:"+error);
+    ethHandler.connect();
+    await mongodbHelper.insertOne(mongodbHelper.collections.get("errors"),{"error":error,"time":Math.round(new Date().getTime()/1000)});
+    });
 
 let start = async () => {
     await mongodbHelper.ConnectToDB();
@@ -82,3 +87,4 @@ let start = async () => {
     scheduleCronstyle();
 }
 start();
+

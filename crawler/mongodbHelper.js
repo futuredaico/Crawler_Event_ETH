@@ -14,6 +14,7 @@ class MongoHelper {
                 this.db = _db.db(mongodb_Db);
                 //默认的库
                 this.collections.set("counter", this.db.collection("counter"));
+                this.collections.set("errors", this.db.collection("errors"));
                 this.collections.set("events", this.db.collection("events"));
                 this.collections.set("contracts",this.db.collection("contracts"));
                 this.collections.get("counter").createIndexes([{ key: { lastIndex: 1 }, name: "i_lastIndex" }, { key: { counter: 1 }, name: "i_counter_unique", unique: true }], () => {

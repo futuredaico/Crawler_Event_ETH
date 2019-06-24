@@ -51,6 +51,11 @@ class EthHandler{
             });
         });
     }
+    
+    hexToNumberString(hex)
+    {
+        return this.web3.utils.hexToNumberString(hex);
+    }
 }
 
 let ethHandler = new EthHandler();

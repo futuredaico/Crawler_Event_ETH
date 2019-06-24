@@ -1,13 +1,16 @@
+const ethHandler = require("./ethHandler.js").EthHandler;
+
 class Tool {
-    static ParseReturnValues(type, data) {
+     ParseReturnValues(type, data) {
         switch (type) {
             case "uint256": 
             case "BigNumber":
-                return parseInt(data["_hex"]);
+                return ethHandler.hexToNumberString(data["_hex"]);
             case "address":
                 return data.toLowerCase();
             default: return data;
         }
     }
 }
-module.exports.Tool = Tool;
+let tool =new Tool();
+module.exports.Tool = tool;
