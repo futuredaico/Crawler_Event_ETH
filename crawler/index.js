@@ -19,8 +19,8 @@ var scheduleCronstyle = async () => {
             console.log("当前的高度---数据库：" + blockindex_db);
             if (blockindex <= blockindex_db)
                 return;
-            contracts.forEach(async (value, key, map) => {
-                let contract = value;
+            for(var _contract of contracts){
+                let contract = _contract[1];
                 for (var n = 0; n < contract.needGetEvents.length; n++) {
                     let needGetEvent = contract.needGetEvents[n];
                     let events = await ethHandler.getPastEvents(contract.instance, needGetEvent.eventName, {
@@ -51,6 +51,7 @@ var scheduleCronstyle = async () => {
                             eventName,
                             values
                         };
+                        console.log(`此时高度${blockindex}，正在插入：`+data);
                         await mongodbHelper.insertOne(mongodbHelper.collections.get("events"), data);
 
 
@@ -61,11 +62,13 @@ var scheduleCronstyle = async () => {
                         }
                     }
                 }
-            });
+            }
             if (blockindex_db == 0)
                 await mongodbHelper.insertOne(mongodbHelper.collections.get("counter"), { "counter": "blockNumber", "lastIndex": blockindex });
-            else
+            else{
+                console.log(`更新高度${blockindex}`);
                 await mongodbHelper.updateOne(mongodbHelper.collections.get("counter"), { "counter": "blockNumber" }, { $set: { "lastIndex": blockindex } });
+            }
         }
         catch (error) {
             console.log("error:"+error);
